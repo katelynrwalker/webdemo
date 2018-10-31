@@ -4,7 +4,6 @@ body {
 
 img {
     height: 150px;
-    width: 150px;
 }
 
 li {
@@ -13,16 +12,16 @@ li {
 
 h1 {
     font-family: 'Gugi', cursive;
-    color: red;
-    background-color: yellow;
-    border: 3px dashed green;
+    color: white;
+    background-color: #3e3e3e;
+    border: 1px dashed black;
     margin: 25px;
     padding: 25px;
 }
 
 #controls {
-    background-color: yellow;
-    border: 3px dashed green;
+    background-color: #3e3e3e;
+    border: 1px dashed black;
     margin: 25px;
     padding: 25px;
 }
