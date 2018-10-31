@@ -43,11 +43,43 @@ $(document).ready(function(){
         title:'Weight'
       },
       yaxis:{
-        title:"MPG"
+        title:'MPG'
       },
-      title: "Scatter MPG vs. Weight",
+      title: 'Scatter MPG vs. Weight',
       width:700,
       height:300
     }
+    Plotly.plot($('#graph1')[0],trace,layout)
+    $('#scatter-plot').hide()
   })
+
+  $('#histogram-plot').click(async function(){
+    console.log('histogram button was clicked')
+    const response = await $.ajax('/plot')
+    console.log(response)
+    const mpg = response.map(a => a[0])
+    console.log(mpg)
+
+    //Create the trace
+    const trace = [{
+      x:mpg,
+      type:"histogram"
+    }]
+
+    //Create the layout
+    const layout = {
+      xaxis:{
+        title:'MPG'
+      },
+      yaxis:{
+        title:'Counts'
+      },
+      title: 'Histogram 4 Halloween',
+      width:700,
+      height:300
+    }
+    Plotly.plot($('#graph2')[0],trace,layout)
+    $('#histogram-plot').hide()
+  })
+
 })

@@ -19,7 +19,8 @@ def mpg():
 model = pickle.load(open('linreg.p', 'rb'))
 
 #create an inference route
-#GET method 
+#GET method just retrieves something
+#POST method sends informaiton and gets some response back (like a function with parameters and response)
 @app.route('/inference', methods=['POST'])
 def inference():
     req = request.get_json()
